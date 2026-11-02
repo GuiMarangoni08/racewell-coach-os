@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Racewell Coach OS — tema alinhado ao Manual de Identidade Visual v3.
+  Fundo escuro roxo (#191530/#231832), verde-limão (#B4F94B) como cor de
+  destaque/ação, Alumni Sans para títulos/números/interface, Inter para
+  corpo de texto. Mesma paleta usada em racewell-front-end/src/styles/theme.ts
+  — um único tema escuro, sem alternância claro/escuro, para ficar fluido
+  com o app existente do atleta.
+*/
+@layer base {
+  :root {
+    --background: 249 39% 14%;
+    --foreground: 0 0% 100%;
+    --card: 246 36% 17%;
+    --card-foreground: 0 0% 100%;
+    --popover: 246 36% 17%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 84 94% 64%;
+    --primary-foreground: 249 39% 12%;
+    --secondary: 246 30% 22%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 246 30% 22%;
+    --muted-foreground: 240 6% 65%;
+    --accent: 246 30% 24%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 351 85% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 249 39% 12%;
+    --border: 246 25% 26%;
+    --input: 246 25% 26%;
+    --ring: 84 94% 64%;
+    --radius: 0.6rem;
+    --sidebar-background: 253 42% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-border: 249 39% 18%;
+    --sidebar-accent: 249 35% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, .font-display {
+    font-family: 'Alumni Sans', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
