@@ -4,9 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 
-// HashRouter (não BrowserRouter): o build também é publicado como artifact
-// de página única, onde não há servidor para resolver rotas profundas
-// (ex: /inbox) em um recarregamento direto — hash routing evita isso.
+// HashRouter mantém as rotas compatíveis com a distribuição de página única.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>

@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 import { screens, screenGroups } from '@/data/screens'
 import { cn } from '@/lib/utils'
-import { currentOrg } from '@/data/mock'
+import { useOrganization } from '@/org/OrganizationProvider'
 
 const iconByCode: Record<string, React.ComponentType<{ className?: string }>> = {
   'RW-COACH-SCREEN-000A': Building2,
@@ -40,6 +40,7 @@ const iconByCode: Record<string, React.ComponentType<{ className?: string }>> = 
 }
 
 export function Sidebar() {
+  const { organization } = useOrganization()
   return (
     <aside className="hidden w-64 shrink-0 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground md:flex">
       <div className="flex items-center gap-2 px-4 py-4">
@@ -48,7 +49,7 @@ export function Sidebar() {
         </div>
         <div className="leading-tight">
           <p className="font-display text-base font-semibold tracking-wide">RACEWELL <span className="text-primary">Coach OS</span></p>
-          <p className="text-[11px] text-sidebar-foreground/60">{currentOrg.name}</p>
+          <p className="text-[11px] text-sidebar-foreground/60">{organization.name}</p>
         </div>
       </div>
 
